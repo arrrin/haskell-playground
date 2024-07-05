@@ -1,5 +1,10 @@
-data BookInfo = Book Int String [String]
+data BookInfo = Book Int String [String] Type
   deriving (Show)
+
+data Type
+  = Horror
+  | Scifi
+  deriving (Eq, Show)
 
 -- behind = is contructor
 data MagazineInfo = Magazine Int String [String]
@@ -25,7 +30,7 @@ data BillingInfo
   | Invoice CustomerID
   deriving (Show)
 
-myInfo = Book 123 "Practicing" ["Arin"]
+myInfo = Book 123 "Practicing" ["Arin"] Scifi
 
 -- Credit card
 myBill = CreditCard "123" "Arin" ["Thailand"]
