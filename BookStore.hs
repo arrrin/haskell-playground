@@ -12,6 +12,14 @@ data MagazineInfo = Magazine Int String [String]
 
 type CustomerID = Int
 
+-- record syntax
+data Customer = Customer
+  { customerID :: CustomerID,
+    customerName :: String,
+    customerAddress :: Address
+  }
+  deriving (Show)
+
 type ReviewBody = String
 
 type CardHolder = String
@@ -38,3 +46,23 @@ myBill = CreditCard "123" "Arin" ["Thailand"]
 nyCash = CashOnDelivery
 
 invoice = Invoice 123
+
+customer1 =
+  Customer
+    271828
+    "J.R. Hacker"
+    [ "255 Syntax Ct",
+      "Milpitas, CA 95134",
+      "USA"
+    ]
+
+customer2 =
+  Customer
+    { customerID = 271828,
+      customerAddress =
+        [ "1048576 Disk Drive",
+          "Milpitas, CA 95134",
+          "USA"
+        ],
+      customerName = "Jane Q. Citizen"
+    }
